@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/u/emed/venv/bin python
 from django.core.management import execute_manager
 import imp
 try:

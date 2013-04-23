@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="controls">
+  <select name = "book" data-placeholder="Your Favorite Type of Bear" style="width:350px;" class="chzn-select" tabindex="7">
+    {% for v in symptom %}
+    <option>{{ v.name }}</option>
+    {% endfor %}                  
+  </select>
+</div>
+
+{% endblock %}
