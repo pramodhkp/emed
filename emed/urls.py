@@ -1,5 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
-from diagnosis.views import DiagnosisView
+from diagnosis.views import SymptomView, DiagnosisView
+
+
 from django.conf import settings
 
 
@@ -16,8 +18,11 @@ urlpatterns = patterns('',
     		 # name='about'),    
     # url(r'^contact/$', ContactView.as_view(template_name="contact.html"),
     		 # name='contact'),
-    url(r'^diagnosis/$', DiagnosisView.as_view(),
+    url(r'^diagnosis/$', SymptomView.as_view(),
     		 name='diagnosis'),
+    url(r'^results/$', DiagnosisView.as_view(),
+    		 name='results'),
+
 
     url(r'^admin/', include(admin.site.urls)),
 )

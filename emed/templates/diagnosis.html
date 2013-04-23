@@ -2,12 +2,26 @@
 
 {% block content %}
 
-<div class="controls">
-  <select name = "book" data-placeholder="Your Favorite Type of Bear" style="width:350px;" class="chzn-select" tabindex="7">
+<div class="row">
+	<div class="span4">
+<form action ="/results/" method="POST">
+  {% csrf_token %}
+  <fieldset>
+    <legend>Disease Diagnoser</legend>
+    <label>Enter symptoms:</label>
+    <select name = "symptoms" data-placeholder="Choose a symptom" style="width:350px;" multiple class="chzn-select" tabindex="7">
     {% for v in symptom %}
     <option>{{ v.name }}</option>
     {% endfor %}                  
   </select>
+    <span class="help-block">Select only three items.</span>    
+    <button type="submit" class="btn">Submit</button>
+  </fieldset>
+</form>
 </div>
+</div>
+
+
+
 
 {% endblock %}
