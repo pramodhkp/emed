@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if not symptoms and not diseases and not doctors %}
+<h2>No results found</h2>
+{% endif %}
+
+{% if diseases %}
+<h2>Diseases:</h2> 
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Domain</th>
+		</tr>
+	</thead>
+  {% for d in diseases %}
+  <td>{{ d.name }}</td>
+  <td>{{ d.domain }}</td>
+  {% endfor %}
+</table>
+
+{% endif %}
+
+
+{% if symptoms %}
+<h2>Symptoms:</h2>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>			
+		</tr>
+	</thead>
+  {% for s in symptoms %}
+  <td>{{ s.name }}</td>  
+  {% endfor %}
+</table>
+
+{% endif %}
+
+{% if doctors %}
+<h2>Doctors:</h2>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Contact</th>
+			<th>Domain</th>			
+		</tr>
+	</thead>
+  {% for doc in doctors %}
+  <td>{{ doc.name }}</td>  
+  <td>{{ d.contact }}</td>
+  <td>{{ d.domain }}</td>
+  {% endfor %}
+</table>
+
+{% endif %}
+{% endblock %}
+

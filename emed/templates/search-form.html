@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/search/" method="POST">
+	{% csrf_token %}
+  <fieldset>
+    <legend>Unified Search</legend>
+    <label>Enter terms</label>
+    <input class="input-xxlarge" type="text" placeholder="Search for doctors, symptoms or diseases">
+    <span class="help-block">Get information on anything from this site</span>  
+    <button type="submit" class="btn">Submit</button>
+  </fieldset>
+</form>
+
+{% endblock %}
